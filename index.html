@@ -14,6 +14,7 @@
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
 </head>
 <body>
     <header class="l-header" id="header">
@@ -66,13 +67,23 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Main content will go here -->
-    </main>
+    <main class="l-main bd-container">
+    <!-- All elements within this div, is generated in PDF -->
+        <div class="resume" id="area-cv">
+            <div class="resume__left">
+                <!-- Left column sections will go here -->
+        </div>
 
-    <footer>
-        <!-- Footer content will go here -->
-    </footer>
+            <div class="resume__right">
+                <!-- Right column sections will go here -->
+            </div>
+        </div>
+    </main>
+    
+    <!--========== SCROLL TOP ==========-->
+    <a href="#home" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+    </a>
 
     <!--========== MAIN JS ==========-->
     <script src="assets/js/main.js"></script>
