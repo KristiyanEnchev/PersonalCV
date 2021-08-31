@@ -41,3 +41,16 @@ function scrollActive() {
     });
 }
 window.addEventListener('scroll', scrollActive);
+
+/*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/
+function scaleCv() {
+    document.body.classList.add('scale-cv');
+}
+
+/*==================== REMOVE THE SIZE WHEN THE CV IS DOWNLOADED ====================*/
+function removeScale() {
+    document.body.classList.remove('scale-cv');
+}
+
+/*==================== GENERATE PDF ====================*/
+// PDF generation will be added in a later commit

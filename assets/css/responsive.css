@@ -1,0 +1,133 @@
+/*========== MEDIA QUERIES ==========*/
+
+/* For small devices, menu two columns */
+@media screen and (max-width: 320px) {
+  .nav__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem .5rem;
+  }
+}
+
+/* Classes modified for large screen size */
+@media screen and (min-width: 968px) {
+  body {
+    margin: 3rem 0;
+  }
+
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l-header,
+  .scrollup {
+    display: none;
+  }
+
+  .resume {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+  }
+
+  .resume__left {
+    background-color: var(--container-color-alt);
+  }
+
+  .resume__left,
+  .resume__right {
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    text-align: initial;
+  }
+
+  .home__container {
+    gap: 1.5rem;
+  }
+
+  /* Show the generate PDF button for desktop */
+  .generate-pdf {
+    display: inline-block;
+  }
+}
+
+/* For PDF export */
+/* Ensure A4 size for PDF export */
+.scale-cv {
+  /* A4 paper size */
+  --page-width: 210mm;
+  --page-height: 297mm;
+  
+  /* Reduced font sizes for better fit */
+  --h1-font-size: .938rem;
+  --h2-font-size: .938rem;
+  --h3-font-size: .875rem;
+  --normal-font-size: .813rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .688rem;
+}
+
+/* Adjustments for PDF generation */
+.scale-cv .resume {
+  width: var(--page-width);
+  height: var(--page-height);
+}
+
+.scale-cv .resume__left,
+.scale-cv .resume__right {
+  padding: 0 1rem;
+}
+
+.scale-cv .section {
+  padding: 1rem 0 .8rem;
+}
+
+.scale-cv .section-title {
+  margin-bottom: .75rem;
+}
+
+.scale-cv .home__img {
+  width: 90px;
+  height: 90px;
+}
+
+.scale-cv .home__container {
+  gap: 1.5rem;
+}
+
+.scale-cv .home__data {
+  gap: .25rem;
+}
+
+.scale-cv .home__address,
+.scale-cv .social__container {
+  gap: .75rem;
+}
+
+.scale-cv .home__icon,
+.scale-cv .social__icon,
+.scale-cv .interests__icon {
+  font-size: 1rem;
+}
+
+.scale-cv .education__container,
+.scale-cv .experience__container,
+.scale-cv .certificates__container {
+  gap: 1rem;
+}
+
+.scale-cv .education__time,
+.scale-cv .experience__time {
+  padding-right: .5rem;
+}
+
+/* Hide buttons and toggles for PDF generation */
+.scale-cv .generate-pdf,
+.scale-cv .change-theme,
+.scale-cv .nav,
+.scale-cv .scrollup {
+  display: none;
+}
