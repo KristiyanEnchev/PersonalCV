@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
     <header class="l-header" id="header">
@@ -72,8 +73,40 @@
     <!-- All elements within this div, is generated in PDF -->
         <div class="resume" id="area-cv">
             <div class="resume__left">
-                <!-- Left column sections will go here -->
-        </div>
+            <!--========== HOME ==========-->
+                <section class="home" id="home">
+                    <div class="home__container section bd-grid">
+                        <div class="home__data bd-grid">
+                            <img src="assets/img/my.png" alt="Profile Picture" class="home__img">
+
+                            <h1 class="home__title">KRISTIYAN <b>ENCHEV</b></h1>
+                            <h3 class="home__profession">Web Developer</h3>
+
+                            <div>
+                                <a download="" href="#" class="home__button-movi active-btn">Download</a>
+                                <a download="" href="#" class="home__button-movi">Download</a>
+                            </div>
+                        </div>
+
+                        <div class="home__address bd-grid">
+                            <span class="home__information">
+                                <i class='bx bx-map home__icon'></i> Bulgaria - Silistra st.Lom 3
+                            </span>
+                            <span class="home__information">
+                                <i class='bx bx-envelope home__icon'></i> kristiqnenchevv@gmail.com
+                            </span>
+                            <span class="home__information">
+                                <i class='bx bx-phone home__icon'></i> +359 89 385 6074
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Theme change button -->
+                    <i class='bx bxs-moon change-theme' title="Theme" id="theme-button"></i>
+
+                    <!-- Button to generate and download the pdf. Available for desktop. -->
+                    <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i>
+                </section>
+            </div>
 
             <div class="resume__right">
                 <!-- Right column sections will go here -->
