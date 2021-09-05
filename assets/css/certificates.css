@@ -1,0 +1,67 @@
+/*========== CERTIFICATES ==========*/
+.certificates__container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.certificates__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.certificates__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
+  transition: .3s;
+}
+
+.certificates__link {
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.certificates__title:hover {
+  color: var(--text-color);
+  text-shadow: 0 0 1px #313131;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Dark theme adjustments */
+.dark-theme .certificates__title {
+  color: var(--title-color);
+}
+
+.dark-theme .certificates__title:hover {
+  color: var(--text-color-light);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 320px) {
+  .certificates__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* PDF export adjustments */
+.scale-cv .certificates__container {
+  gap: 1rem;
+}
+
+.scale-cv .certificates__title {
+  margin-bottom: .5rem;
+}
