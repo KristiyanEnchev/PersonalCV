@@ -131,3 +131,8 @@
 .scale-cv .scrollup {
   display: none;
 }
+
+/* Hide download button in PDF print */
+.scale-cv .home__button-movi {
+  display: none;
+}
