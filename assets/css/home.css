@@ -56,11 +56,28 @@
   transition: .3s;
   font-weight: var(--font-medium);
   margin-top: var(--mb-3);
+  margin-right: 0.5rem;
+  opacity: 0.7;
 }
 
 .home__button-movi:hover {
   background-color: var(--text-color);
   color: var(--container-color);
+}
+
+.active-btn {
+  opacity: 1;
+}
+
+/* Dark theme adjustments */
+.dark-theme .home__button-movi {
+  border-color: var(--text-color-light);
+  color: var(--title-color);
+}
+
+.dark-theme .home__button-movi:hover {
+  background-color: var(--text-color-light);
+  color: var(--container-color-alt);
 }
 
 /*========== BUTTONS ==========*/

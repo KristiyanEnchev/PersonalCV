@@ -57,6 +57,10 @@ const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bx-sun';
 
+const downloadBtnDark = document.querySelectorAll('.home__button-movi');
+const lightBtn = document.getElementById('light-resume');
+const darkBtn = document.getElementById('dark-resume');
+
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
@@ -72,11 +76,29 @@ if (selectedTheme) {
     themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme);
 }
 
+// Toggle download buttons based on theme
+function toggleDownloadButtons() {
+    if (document.body.classList.contains('dark-theme')) {
+        downloadBtnDark[0].classList.remove('active-btn');
+        downloadBtnDark[1].classList.add('active-btn');
+    } else {
+        downloadBtnDark[0].classList.add('active-btn');
+        downloadBtnDark[1].classList.remove('active-btn');
+    }
+}
+
+// Initialize button state
+toggleDownloadButtons();
+
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme);
     themeButton.classList.toggle(iconTheme);
+    
+    // Toggle download buttons
+    toggleDownloadButtons();
+    
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
@@ -85,6 +107,8 @@ themeButton.addEventListener('click', () => {
 /*==================== GENERATE PDF ====================*/
 let areaCv = document.getElementById('area-cv');
 let resumeButton = document.getElementById('resume-button');
+let lightResumeBtn = document.getElementById('light-resume');
+let darkResumeBtn = document.getElementById('dark-resume');
 
 let opt = {
     margin: 1,
@@ -94,12 +118,47 @@ let opt = {
     jsPDF: { format: 'a4', orientation: 'portrait' }
 };
 
-function generateResume() {
+function generateLightResume() {
+    document.body.classList.remove('dark-theme');
+    opt.filename = 'myResumeLight.pdf';
     html2pdf(areaCv, opt);
 }
 
+function generateDarkResume() {
+    document.body.classList.add('dark-theme');
+    opt.filename = 'myResumeDark.pdf';
+    html2pdf(areaCv, opt);
+}
+
+function generateResume() {
+    // Default (for the resume button)
+    opt.filename = 'myResume.pdf';
+    html2pdf(areaCv, opt);
+}
+
+// Main download button
 resumeButton.addEventListener('click', () => {
     scaleCv();
     generateResume();
     setTimeout(removeScale, 5000);
+});
+
+// Light theme download button
+lightResumeBtn.addEventListener('click', () => {
+    scaleCv();
+    generateLightResume();
+    setTimeout(() => {
+        removeScale();
+        toggleDownloadButtons(); // Reset button states after download
+    }, 5000);
+});
+
+// Dark theme download button
+darkResumeBtn.addEventListener('click', () => {
+    scaleCv();
+    generateDarkResume();
+    setTimeout(() => {
+        removeScale();
+        toggleDownloadButtons(); // Reset button states after download
+    }, 5000);
 });
