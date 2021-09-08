@@ -3,15 +3,22 @@
   display: grid;
   background-color: var(--container-color);
   box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+  transition: all 0.3s ease;
+}
+
+.resume:hover {
+  box-shadow: 0 0 16px rgba(13, 12, 12, .2);
 }
 
 .resume__left {
   background-color: var(--container-color-alt);
   padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .resume__right {
   padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .resume__left, 
@@ -21,6 +28,7 @@
 
 .section {
   padding: 1.5rem 0;
+  transition: all 0.3s ease;
 }
 
 .section-title {
@@ -31,6 +39,23 @@
   letter-spacing: .35rem;
   text-align: center;
   margin-bottom: var(--mb-3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: rgb(255, 145, 0);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dark-theme .section-title::after {
+  background-color: var(--accent-color);
 }
 
 /* Scroll top */
@@ -42,11 +67,17 @@
   justify-content: center;
   align-items: center;
   padding: .3rem;
-  background: var(--text-color);
+  background: rgb(255, 145, 0);
   border-radius: .4rem;
   z-index: var(--z-tooltip);
-  transition: .4s;
+  transition: all 0.4s ease;
   visibility: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scrollup:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .scrollup__icon {

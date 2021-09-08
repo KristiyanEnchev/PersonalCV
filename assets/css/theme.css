@@ -5,6 +5,12 @@ body.dark-theme {
   --container-color: #212121;
   --container-color-alt: #181616;
   --body-color: #2b2b2b;
+
+  /* Additional dark theme specific colors */
+  --accent-color: #4db6ac;
+  --accent-light: #82e9de;
+  --accent-dark: #00867d;
+  --text-highlight: #e0e0e0;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -16,10 +22,12 @@ body.dark-theme {
   color: var(--text-color);
   font-size: 1.2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .change-theme:hover {
   color: var(--title-color);
+  transform: scale(1.1);
 }
 
 /* Dark theme additional styles for specific components */
@@ -31,6 +39,7 @@ body.dark-theme {
 .dark-theme .home__button-movi:hover {
   background-color: var(--text-color);
   color: var(--container-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .dark-theme .nav__logo,
@@ -38,4 +47,37 @@ body.dark-theme {
 .dark-theme .change-theme,
 .dark-theme .generate-pdf {
   color: var(--title-color);
+}
+
+.dark-theme .section-title {
+  color: var(--text-highlight);
+}
+
+/* Gradient backgrounds for cards in dark theme */
+.dark-theme .skills__name {
+  background: linear-gradient(to right, #3f3f3f 0%, #696969 100%);
+  border-color: var(--accent-color);
+}
+
+.dark-theme .languages__name {
+  background: linear-gradient(to right, #333333 0%, #555555 100%);
+  border-color: var(--accent-color);
+  color: var(--title-color);
+}
+
+/* Enhanced visual indicators */
+.dark-theme .education__rounder,
+.dark-theme .education__line,
+.dark-theme .experience__rounder,
+.dark-theme .experience__line {
+  background-color: var(--accent-color);
+}
+
+.dark-theme .scrollup {
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .scrollup__icon {
+  color: var(--container-color);
 }
