@@ -57,6 +57,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease;
 }
 
 h1, h2, h3, ul, p {
@@ -66,6 +67,7 @@ h1, h2, h3, ul, p {
 h1, h2, h3 {
   color: var(--title-color);
   font-weight: var(--font-medium);
+  transition: color 0.3s ease;
 }
 
 ul {
@@ -76,6 +78,7 @@ ul {
 a {
   text-decoration: none;
   color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 img {

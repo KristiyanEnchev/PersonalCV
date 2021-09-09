@@ -162,3 +162,24 @@ darkResumeBtn.addEventListener('click', () => {
         toggleDownloadButtons(); // Reset button states after download
     }, 5000);
 });
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 800,
+    reset: true
+});
+
+sr.reveal(`.home__data, .home__address,
+          .section-title,
+          .profile__description,
+          .social__container,
+          .skills__content,
+          .education__content,
+          .experience__content,
+          .certificates__content,
+          .languages__content,
+          .interests__content`, {
+    interval: 100
+});
