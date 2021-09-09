@@ -1,6 +1,14 @@
 /*==================== SMOOTH SCROLL TOP ====================*/
+/**
+ * This file contains functionality for smooth scrolling behavior
+ * and the scroll-to-top button functionality
+ */
 
 /*==================== SHOW SCROLL TOP ====================*/
+/**
+ * Show/hide the scroll-to-top button based on scroll position
+ * The button appears when the user scrolls down 200px or more
+ */
 function scrollTop() {
     const scrollTop = document.getElementById('scroll-up');
     if (this.scrollY >= 200) {
@@ -12,6 +20,11 @@ function scrollTop() {
 window.addEventListener('scroll', scrollTop);
 
 /*==================== SMOOTH SCROLL BEHAVIOR ====================*/
+/**
+ * Add smooth scrolling behavior to all internal page links
+ * When a link is clicked, it smoothly scrolls to the target section
+ * Also updates the active navigation link to match the current section
+ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -26,7 +39,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 navMenu.classList.remove('show-menu');
             }
             
-            // Calculate scroll position with offset
+            // Calculate scroll position with offset for the fixed header
             const headerHeight = document.querySelector('.l-header').offsetHeight;
             const targetPosition = targetElement.offsetTop - headerHeight;
             
@@ -46,6 +59,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /*==================== SCROLL UP BUTTON FUNCTIONALITY ====================*/
+/**
+ * Add click event to the scroll-to-top button
+ * When clicked, it smoothly scrolls the page back to the top
+ */
 const scrollUpButton = document.getElementById('scroll-up');
 if (scrollUpButton) {
     scrollUpButton.addEventListener('click', function(e) {
