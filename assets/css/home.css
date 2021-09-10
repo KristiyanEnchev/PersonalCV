@@ -22,6 +22,8 @@
   box-sizing: content-box;
   border: solid rgb(255, 145, 0) 3px;
   transition: transform 0.3s ease;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home__img:hover {
@@ -69,6 +71,9 @@
   margin-top: var(--mb-3);
   margin-right: 0.5rem;
   opacity: 0.7;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .home__button-movi:hover {
@@ -76,6 +81,7 @@
   color: var(--container-color);
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
 }
 
 .active-btn {

@@ -4,6 +4,8 @@
   background-color: var(--container-color);
   box-shadow: 0 0 8px rgba(13, 12, 12, .15);
   transition: all 0.3s ease;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .resume:hover {
@@ -29,6 +31,8 @@
 .section {
   padding: 1.5rem 0;
   transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .section-title {
@@ -41,6 +45,7 @@
   margin-bottom: var(--mb-3);
   position: relative;
   transition: all 0.3s ease;
+  padding-bottom: 10px;
 }
 
 .section-title::after {

@@ -1,77 +1,47 @@
-/*==================== SMOOTH SCROLL TOP ====================*/
-/**
- * This file contains functionality for smooth scrolling behavior
- * and the scroll-to-top button functionality
- */
+function smoothScroll(event) {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute('href') === '#' ? '.header' : event.currentTarget.getAttribute('href');
+    const targetPosition = document.querySelector(targetId).offsetTop;
+    // const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 750;
+    let startTime = null;
 
-/*==================== SHOW SCROLL TOP ====================*/
-/**
- * Show/hide the scroll-to-top button based on scroll position
- * The button appears when the user scrolls down 200px or more
- */
-function scrollTop() {
-    const scrollTop = document.getElementById('scroll-up');
-    if (this.scrollY >= 200) {
-        scrollTop.classList.add('show-scroll');
-    } else {
-        scrollTop.classList.remove('show-scroll');
-    }
-}
-window.addEventListener('scroll', scrollTop);
-
-/*==================== SMOOTH SCROLL BEHAVIOR ====================*/
-/**
- * Add smooth scrolling behavior to all internal page links
- * When a link is clicked, it smoothly scrolls to the target section
- * Also updates the active navigation link to match the current section
- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            // Close mobile menu if open
-            const navMenu = document.getElementById('nav-menu');
-            if (navMenu.classList.contains('show-menu')) {
-                navMenu.classList.remove('show-menu');
-            }
-            
-            // Calculate scroll position with offset for the fixed header
-            const headerHeight = document.querySelector('.l-header').offsetHeight;
-            const targetPosition = targetElement.offsetTop - headerHeight;
-            
-            // Animate scroll with smooth easing
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-            
-            // Update active nav link after scroll
-            document.querySelectorAll('.nav__link').forEach(link => {
-                link.classList.remove('active-link');
-            });
-            this.classList.add('active-link');
+    function step(timestamp) {
+        if (!startTime) {
+            startTime = timestamp;
         }
-    });
-});
 
-/*==================== SCROLL UP BUTTON FUNCTIONALITY ====================*/
-/**
- * Add click event to the scroll-to-top button
- * When clicked, it smoothly scrolls the page back to the top
- */
-const scrollUpButton = document.getElementById('scroll-up');
-if (scrollUpButton) {
-    scrollUpButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Smooth scroll to top with animation
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+        const progress = timestamp - startTime;
+
+        let run = easeInOutCubic(progress, startPosition, distance, duration);
+        window.scrollTo(0, run);
+
+        if (progress < duration) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    function easeInOutCubic(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
+    };
+
+    requestAnimationFrame(step);
 }
+
+let scrollUpBtn = document.getElementById('scroll-up');
+let allSections = document.querySelectorAll('.nav__item');
+let navlogo = document.querySelector('.nav__logo');
+
+scrollUpBtn.addEventListener('click', smoothScroll);
+
+navlogo.addEventListener('click', smoothScroll);
+
+allSections.forEach(section => {
+    let some = section.querySelector('.nav__link');
+    some.addEventListener('click', smoothScroll);
+});

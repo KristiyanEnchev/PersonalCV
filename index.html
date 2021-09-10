@@ -28,10 +28,10 @@
 </head>
 <body>
     <header class="l-header" id="header">
-        <nav class="nav bd-container">
+        <nav class="nav bd-container" role="navigation" aria-label="Main navigation">
             <a href="#" class="nav__logo">Kristiyan</a>
 
-            <div class="nav__menu" id="nav-menu">
+            <div class="nav__menu" id="nav-menu" aria-label="Navigation menu">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">
@@ -71,7 +71,7 @@
                 </ul>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
+            <div class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <i class='bx bx-grid-alt'></i>
             </div>
         </nav>
@@ -85,14 +85,14 @@
                 <section class="home" id="home">
                     <div class="home__container section bd-grid">
                         <div class="home__data bd-grid">
-                            <img src="assets/img/my.png" alt="Profile Picture" class="home__img">
+                            <img src="assets/img/my.png" alt="Kristiyan Enchev profile photograph" class="home__img">
 
                             <h1 class="home__title">KRISTIYAN <b>ENCHEV</b></h1>
                             <h3 class="home__profession">Web Developer</h3>
 
                             <div>
-                                <a download="" href="#" class="home__button-movi active-btn" id="light-resume">Download Light</a>
-                                <a download="" href="#" class="home__button-movi" id="dark-resume">Download Dark</a>
+                                <a download="" href="#" class="home__button-movi active-btn" id="light-resume" aria-label="Download resume with light theme">Download Light</a>
+                                <a download="" href="#" class="home__button-movi" id="dark-resume" aria-label="Download resume with dark theme">Download Dark</a>
                             </div>
                         </div>
 
@@ -109,10 +109,10 @@
                         </div>
                     </div>
                     <!-- Theme change button -->
-                    <i class='bx bxs-moon change-theme' title="Theme" id="theme-button"></i>
+                    <i class='bx bxs-moon change-theme' title="Toggle light/dark theme" id="theme-button" role="button" tabindex="0" aria-label="Toggle light/dark theme"></i>
 
                     <!-- Button to generate and download the pdf. Available for desktop. -->
-                    <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i>
+                    <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button" role="button" tabindex="0" aria-label="Generate and download PDF"></i>
                 </section>
                 
                 <!--========== CERTIFICATES ==========-->
@@ -415,12 +415,11 @@
     </main>
     
     <!--========== SCROLL TOP ==========-->
-    <a href="#home" class="scrollup" id="scroll-up">
+    <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
         <i class='bx bx-up-arrow-alt scrollup__icon'></i>
     </a>
 
     <!--========== MAIN JS ==========-->
-    <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/html2pdf.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/smoothScrollTop.js"></script>

@@ -18,9 +18,16 @@
   box-sizing: content-box;
   border-radius: 0.25rem;
   border: solid rgb(255, 145, 0) 3px;
-  padding: 3px;
+  padding: 8px 12px;
   background: linear-gradient(to left, #5e5e5e 0%, #2e2e2e 100%);
   color: var(--container-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills__name:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skills__circle {
