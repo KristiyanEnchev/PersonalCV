@@ -1,4 +1,9 @@
 /*==================== SHOW MENU ====================*/
+/**
+ * Toggle the visibility of the mobile navigation menu
+ * @param {string} toggleId - The ID of the toggle button element
+ * @param {string} navId - The ID of the navigation menu element
+ */
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId);
     const nav = document.getElementById(navId);
@@ -12,6 +17,9 @@ const showMenu = (toggleId, navId) => {
 showMenu('nav-toggle', 'nav-menu');
 
 /*==================== REMOVE MENU MOBILE ====================*/
+/**
+ * Close the mobile menu when a navigation link is clicked
+ */
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction() {
@@ -21,6 +29,10 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/**
+ * Highlight navigation links when their corresponding sections are visible in the viewport
+ * This creates an interactive navigation experience as users scroll through the page
+ */
 const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
@@ -28,9 +40,10 @@ function scrollActive() {
 
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
+        const sectionTop = current.offsetTop - 50; // Offset for header
         let sectionId = current.getAttribute('id');
 
+        // Add active-link class when section is in viewport
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
         } else {
@@ -48,38 +61,64 @@ function scrollTop() {
 window.addEventListener('scroll', scrollTop)
 
 /*==================== DARK LIGHT THEME ====================*/
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'bx-sun'
+/**
+ * Toggle between dark and light themes
+ * Uses localStorage to remember user's theme preference between sessions
+ * Also controls the download button states based on the selected theme
+ */
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'bx-sun';
 
+// Download buttons for both light and dark themes
 const downloadBtnDark = document.querySelectorAll('.home__button-movi');
+const lightBtn = document.getElementById('light-resume');
+const darkBtn = document.getElementById('dark-resume');
 
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+// Get previously selected theme from localStorage if available
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
 
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+// Functions to get current theme and icon status
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun';
 
-if (selectedTheme) {
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+/**
+ * Toggle the state of download buttons based on the current theme
+ * Makes the appropriate button more visible depending on the theme
+ */
+function toggleDownloadButtons() {
+    if (document.body.classList.contains('dark-theme')) {
+        downloadBtnDark[0].classList.remove('active-btn');
+        downloadBtnDark[1].classList.add('active-btn');
+    } else {
+        downloadBtnDark[0].classList.add('active-btn');
+        downloadBtnDark[1].classList.remove('active-btn');
+    }
 }
 
+// Initialize download button states
+toggleDownloadButtons();
+
+// Apply saved theme preference if it exists
+if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+    themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme);
+}
+
+// Add click event listener to theme toggle button
 themeButton.addEventListener('click', () => {
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    if (document.body.classList.contains('dark-theme')){
-        downloadBtnDark[0].classList[selectedTheme === 'dark' ? 'add' : 'remove']('active-btn');
-        downloadBtnDark[1].classList[selectedTheme === 'light' ? 'add' : 'remove']('active-btn');
-    }else{
-        downloadBtnDark[0].classList[selectedTheme === 'light' ? 'add' : 'remove']('active-btn');
-        downloadBtnDark[1].classList[selectedTheme === 'dark' ? 'add' : 'remove']('active-btn');
-    }
-
-
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
+    // Toggle theme classes
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+    
+    // Update download button states
+    toggleDownloadButtons();
+    
+    // Save theme preference to localStorage
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+});
 
 /*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/
 function scaleCv() {
@@ -94,6 +133,8 @@ function removeScale() {
 /*==================== GENERATE PDF ====================*/
 let areaCv = document.getElementById('area-cv');
 let resumeButton = document.getElementById('resume-button');
+let lightResumeBtn = document.getElementById('light-resume');
+let darkResumeBtn = document.getElementById('dark-resume');
 
 let opt = {
     margin: 1,
@@ -103,15 +144,73 @@ let opt = {
     jsPDF: { format: 'a4', orientation: 'portrait' }
 };
 
-function generateResume() {
+function generateLightResume() {
+    document.body.classList.remove('dark-theme');
+    opt.filename = 'myResumeLight.pdf';
     html2pdf(areaCv, opt);
 }
 
+function generateDarkResume() {
+    document.body.classList.add('dark-theme');
+    opt.filename = 'myResumeDark.pdf';
+    html2pdf(areaCv, opt);
+}
+
+function generateResume() {
+    // Default (for the resume button)
+    opt.filename = 'myResume.pdf';
+    html2pdf(areaCv, opt);
+}
+
+// Main download button
 resumeButton.addEventListener('click', () => {
     scaleCv();
     generateResume();
     setTimeout(removeScale, 5000);
 });
 
+// Light theme download button
+lightResumeBtn.addEventListener('click', () => {
+    scaleCv();
+    generateLightResume();
+    setTimeout(() => {
+        removeScale();
+        toggleDownloadButtons(); // Reset button states after download
+    }, 5000);
+});
 
+// Dark theme download button
+darkResumeBtn.addEventListener('click', () => {
+    scaleCv();
+    generateDarkResume();
+    setTimeout(() => {
+        removeScale();
+        toggleDownloadButtons(); // Reset button states after download
+    }, 5000);
+});
 
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+/**
+ * Initialize the ScrollReveal library to add entrance animations to elements
+ * as they come into the viewport while scrolling
+ */
+const sr = ScrollReveal({
+    origin: 'top', // Elements appear from the top
+    distance: '30px', // Distance the elements move during animation
+    duration: 800, // Animation duration in milliseconds
+    reset: true // Animation repeats when scrolling back up
+});
+
+// Apply reveal animation to specific elements with a staggered interval
+sr.reveal(`.home__data, .home__address,
+          .section-title,
+          .profile__description,
+          .social__container,
+          .skills__content,
+          .education__content,
+          .experience__content,
+          .certificates__content,
+          .languages__content,
+          .interests__content`, {
+    interval: 100 // 100ms delay between each element's animation
+});
