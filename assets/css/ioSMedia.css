@@ -1,0 +1,93 @@
+/*==================== Iphone 6,7,8 ====================*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 736px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        body{
+            margin: 0 0 8rem 0;
+        }
+
+        .l-header, .nav__menu, .scrollup{
+            margin: 0 0 4rem 0;
+        }
+
+        .l-header{
+            padding: .5rem 0 .5rem;
+        }
+        .bottom-wrapper{
+            display: grid;
+            grid-template-columns:repeat(1, 1fr);
+        }
+}
+
+/*==================== Iphone X ====================*/
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        body{
+            margin: 0 0 12rem 0;
+        }
+
+        .l-header, .nav__menu, .scrollup{
+            margin: 0 0 9rem 0;
+        }
+
+        .l-header{
+            padding: .5rem 0 .5rem;
+        }
+
+        .bottom-wrapper{
+            display: grid;
+            grid-template-columns:repeat(1, 1fr);
+        }
+
+}
+
+/*==================== Iphone 11 pro max ====================*/
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        body{
+            margin: 0 0 272px 0;
+        }
+
+        .header, .nav__menu, .scrollup{
+            margin: 0 0 232px 0;
+        }
+        
+        .header{
+            padding: .5rem 0 .5rem;
+        }
+        .bottom-wrapper{
+            display: grid;
+            grid-template-columns:repeat(1, 1fr);
+        }
+
+}
+
+/*==================== Iphone SE 2020 ====================*/
+    
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 667px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        body{
+            margin: 0 0 4rem 0;
+        }
+
+        .l-header, .nav__menu, .scrollup{
+            margin: 0 0 0rem 0;
+        }
+
+        .l-header{
+            padding: .5rem 0 .5rem;
+        }
+        .bottom-wrapper{
+            display: grid;
+            grid-template-columns:repeat(1, 1fr);
+        }
+        
+}
