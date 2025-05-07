@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristiyan Enchev - Senior Full Stack Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --dark-bg: #2d2d2d;
+            --light-bg: #f5f5f5;
+            --accent-color: #ff9800;
+            --text-light: #e0e0e0;
+            --text-dark: #333333;
+            --section-gap: 1.5rem;
+            --border-radius: 8px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #f97316;
+            text-decoration: underline;
+        }
+
+        body {
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .cv-container {
+            background-color: white;
+            width: 1100px;
+            max-width: 100%;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: #e08600;
+        }
+
+        .download-icon {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 1.8rem 1.2rem;
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 0.95rem;
+            font-weight: 400;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .sidebar-section {
+            margin-bottom: 1.2rem;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 35px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-icon {
+            margin-right: 0.8rem;
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .profile-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .languages-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .language-name {
+            font-size: 0.85rem;
+        }
+
+        .language-level {
+            width: 100px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .language-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        .interests-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        .interest-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .interest-icon {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 1.8rem 1.5rem;
+            background-color: white;
+        }
+
+        .main-section-title {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .main-section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .timeline-section {
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-row {
+            display: flex;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-left,
+        .timeline-right {
+            position: relative;
+            width: 50%;
+            z-index: 1;
+        }
+
+        .timeline-right {
+            margin-top: 1.5rem;
+        }
+
+        .timeline-left .timeline-content {
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .timeline-right .timeline-content {
+            margin-left: 15px;
+            position: relative;
+        }
+
+        .timeline-content {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 0.8rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-left .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 15px;
+            border-style: solid;
+            border-width: 8px 0 8px 8px;
+            border-color: transparent transparent transparent #f8f9fa;
+        }
+
+        .timeline-right .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 15px;
+            border-style: solid;
+            border-width: 8px 8px 8px 0;
+            border-color: transparent #f8f9fa transparent transparent;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            top: 16px;
+            z-index: 2;
+        }
+
+        .timeline-left .timeline-dot {
+            right: -7px;
+        }
+
+        .timeline-right .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-subtitle {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--accent-color);
+        }
+
+        .timeline-year {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+            color: #666;
+            display: block;
+        }
+
+        .timeline-text {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .grid-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+        }
+
+        .project-card {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 0.1rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+            color: var(--text-dark);
+            padding: 0.4rem 0.4rem 0 0.4rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 0.3rem;
+            padding: 0 0.4rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            margin-bottom: 0.3rem;
+            padding: 0 0.4rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-size: 0.55rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-color);
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 0.4rem 0.4rem 0.4rem;
+        }
+
+        .project-link i {
+            margin-right: 0.3rem;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .certificate-item {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0.7rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .certificate-title {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .certificate-link {
+            color: var(--accent-color);
+            font-size: 0.65rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.4rem;
+            background-color: rgba(255, 152, 0, 0.1);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .certificate-link:hover {
+            background-color: rgba(255, 152, 0, 0.2);
+        }
+
+        .certificate-link i {
+            margin-right: 0.3rem;
+        }
+
+        .key-competence {
+            display: flex;
+            margin-bottom: 0.4rem;
+            align-items: flex-start;
+        }
+
+        .competence-icon {
+            margin-right: 0.6rem;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        .competence-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .devops-container {
+            margin-top: 0.6rem;
+        }
+
+        .devops-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+        }
+
+        .devops-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .devops-icon {
+            margin-right: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .growth-area {
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-style: italic;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+        }
+
+        .growth-icon {
+            margin-right: 0.6rem;
+            color: var(--accent-color);
+        }
+
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        #loadingOverlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .cv-container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-row {
+                flex-direction: column;
+            }
+
+            .timeline-left,
+            .timeline-right {
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .timeline-left .timeline-content,
+            .timeline-right .timeline-content {
+                margin-left: 40px;
+                margin-right: 0;
+            }
+
+            .timeline-left .timeline-dot,
+            .timeline-right .timeline-dot {
+                left: 13px;
+                right: auto;
+            }
+
+            .timeline-left .timeline-content::after,
+            .timeline-right .timeline-content::after {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-btn {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles for PDF download */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+                font-size: 95%;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                overflow: visible;
+                page-break-inside: avoid;
+            }
+
+            .sidebar {
+                width: 28%;
+                padding: 1.5rem 1rem;
+            }
+
+            .main-content {
+                width: 72%;
+                padding: 1.5rem 1.2rem;
+            }
+
+            .download-btn {
+                display: none;
+            }
+
+            .section-gap {
+                margin-bottom: 1rem;
+                /* Reduced margins for print */
+            }
+
+            /* Reduce spacing between elements */
+            .sidebar-section {
+                margin-bottom: 1rem;
+            }
+
+            .timeline-section,
+            .grid-section {
+                margin-bottom: 1.2rem;
+            }
+
+            /* Compact timeline for print */
+            .timeline-row {
+                margin-bottom: 0.5rem;
+            }
+
+            .timeline-right {
+                margin-top: 1rem;
+            }
+
+            /* Adjust grid layouts for print */
+            .projects-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
+                page-break-inside: avoid;
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.4rem;
+                page-break-inside: avoid;
+            }
+
+            /* Ensure no page breaks inside important content */
+            .project-card,
+            .certificate-item,
+            .timeline-content {
+                page-break-inside: avoid;
+            }
+
+            /* Force page break after experience section */
+            .experience-section {
+                page-break-after: always;
+            }
+
+            /* Make sure we don't waste white space at the bottom of pages */
+            h2 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="cv-container" id="cv-content">
+        <button class="download-btn" id="downloadBtn" title="Download CV">
+            <i class="fas fa-download download-icon"></i>
+        </button>
+
+        <aside class="sidebar">
+            <div class="profile-header">
+                <img src="/img/my.png" alt="Kristiyan Enchev" class="profile-img">
+                <h1 class="name">KRISTIYAN ENCHEV</h1>
+                <p class="title">Senior Full Stack Developer</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon text-orange-500"></i>
+                    <a href="mailto:kristiqnenchevv@gmail.com"
+                        class="no-underline text-white hover:text-orange-400 transition-colors duration-200">
+                        kristiqnenchevv@gmail.com
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon text-orange-500"></i>
+                    <span class="text-white">+359 89 385 6074</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title">Social</h2>
+                <div class="social-links">
+                    <a href="https://github.com/KristiyanEnchev" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title">Profile</h2>
+                <p class="profile-text">
+                    Experienced full-stack developer specializing in building enterprise-grade applications with .NET
+                    and modern JavaScript frameworks. I architect clean, maintainable solutions following domain-driven
+                    design principles, with expertise in:
+                </p>
+                <div style="margin-top: 0.6rem;">
+                    <div class="key-competence">
+                        <i class="fas fa-check-circle competence-icon"></i>
+                        <span class="competence-text">RESTful API design & microservices architecture</span>
+                    </div>
+                    <div class="key-competence">
+                        <i class="fas fa-check-circle competence-icon"></i>
+                        <span class="competence-text">Clean Architecture & Domain-Driven Design</span>
+                    </div>
+                    <div class="key-competence">
+                        <i class="fas fa-check-circle competence-icon"></i>
+                        <span class="competence-text">Full stack web application development</span>
+                    </div>
+                    <div class="key-competence">
+                        <i class="fas fa-check-circle competence-icon"></i>
+                        <span class="competence-text">System integration & performance optimization</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title">DevOps & Cloud</h2>
+                <p class="profile-text">
+                    Proficient in containerization and deployment automation with basic knowledge in:
+                </p>
+                <div class="devops-container">
+                    <div class="devops-items">
+                        <div class="devops-item">
+                            <i class="fab fa-docker devops-icon"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="devops-item">
+                            <i class="fas fa-cubes devops-icon"></i>
+                            <span>Docker Compose</span>
+                        </div>
+                        <div class="devops-item">
+                            <i class="fas fa-code-branch devops-icon"></i>
+                            <span>CI/CD</span>
+                        </div>
+                        <div class="devops-item">
+                            <i class="fas fa-dharmachakra devops-icon"></i>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="growth-area">
+                    <i class="fas fa-rocket growth-icon"></i>
+                    <span>Actively expanding knowledge in cloud-native applications and infrastructure as code</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title extrams">Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">ASP.NET Core</span>
+                    <span class="skill-tag">EF Core</span>
+                    <span class="skill-tag">MS SQL</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">TailwindCSS</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">CQRS</span>
+                    <span class="skill-tag">Microservices</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title extramlang">Languages</h2>
+                <div class="languages-container">
+                    <div class="language-item">
+                        <span class="language-name">Bulgarian</span>
+                        <div class="language-level">
+                            <div class="language-progress" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <div class="language-level">
+                            <div class="language-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">French</span>
+                        <div class="language-level">
+                            <div class="language-progress" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="section-title extramint">Interests</h2>
+                <div class="interests-container">
+                    <div class="interest-item">
+                        <i class="fas fa-solid fa-robot interest-icon"></i>
+                        <span>AI</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-microchip interest-icon"></i>
+                        <span>Technology</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-chart-line interest-icon"></i>
+                        <span>Digital Marketing</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-leaf interest-icon"></i>
+                        <span>Green Energy</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-heartbeat interest-icon"></i>
+                        <span>Health & Fitness</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="timeline-section experience-section">
+                <h2 class="main-section-title">EXPERIENCE</h2>
+                <div class="timeline">
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">SME and Technical Lead consultant</h3>
+                                <h4 class="timeline-subtitle">2025 - Present, Accedia AD</h4>
+                                <p class="timeline-text">
+                                    Subject matter expert (SME) and Technical Lead for the Identity and Access
+                                    Management platform of AlexanderForbes.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Senior Developer</h3>
+                                <h4 class="timeline-subtitle">2024 - Present, Accedia AD</h4>
+                                <p class="timeline-text">
+                                    Designed scalable microservices architecture. Led code reviews, sprint planning, and
+                                    team mentoring.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Mid Developer</h3>
+                                <h4 class="timeline-subtitle">2023 - 2024, Accedia AD</h4>
+                                <p class="timeline-text">
+                                    Supporting AlexanderForbes "Common Services" microservices. Implemented RESTful APIs
+                                    using ASP.NET Core.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Junior Developer</h3>
+                                <h4 class="timeline-subtitle">2022 - 2023, Accedia AD</h4>
+                                <p class="timeline-text">
+                                    Contributed to backend development using C# and ASP.NET Core, working with SQL
+                                    Server and Entity Framework Core.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">IT Support</h3>
+                                <h4 class="timeline-subtitle">2020 - 2022, Kristelin OOD</h4>
+                                <p class="timeline-text">
+                                    Provided IT support and system maintenance for company systems.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Carnival Cruise Lines</h3>
+                                <h4 class="timeline-subtitle">2014 - 2020, Miami, Florida, USA</h4>
+                                <p class="timeline-text">
+                                    Sr. Bartender | Asst. Specialty Restaurant Manager | SteakHouse Server
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid-section">
+                <h2 class="main-section-title">Personal Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">MessagingMicroservices</h3>
+                        <p class="project-subtitle">.NET 8 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">Clean Architecture</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/MessagingMicroservices" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">StockDock</h3>
+                        <p class="project-subtitle">.NET 9 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DDD</span>
+                            <span class="tech-tag">SignalR</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/StockDock" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">BlogStop</h3>
+                        <p class="project-subtitle">.NET 6 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Clean Architecture</span>
+                            <span class="tech-tag">Domain Events</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/BlogStop" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">SHOP4E</h3>
+                        <p class="project-subtitle">Node.js + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/SHOP4E" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">MovieNet</h3>
+                        <p class="project-subtitle">.NET 6 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Clean Architecture</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/MovieNet" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">Bug Jar</h3>
+                        <p class="project-subtitle">ASP.NET Core</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MVC</span>
+                            <span class="tech-tag">EF Core</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/IssueSystem" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">BookClub</h3>
+                        <p class="project-subtitle">.NET 8 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">CQRS</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/BookClub" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">TodoSwitch</h3>
+                        <p class="project-subtitle">.NET 7 + React 18</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DDD</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/KristiyanEnchev/TodoSwitch" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section">
+                <h2 class="main-section-title extram">EDUCATION</h2>
+                <div class="timeline">
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">C# Web Development</h3>
+                                <h4 class="timeline-subtitle">Software University "SoftUni"</h4>
+                                <span class="timeline-year">2019 - 2022</span>
+                            </div>
+                        </div>
+                        <div class="timeline-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">JS Web Development (React)</h3>
+                                <h4 class="timeline-subtitle">Software University "SoftUni"</h4>
+                                <span class="timeline-year">2020 - 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">HTML and CSS</h3>
+                                <h4 class="timeline-subtitle">Software University "SoftUni"</h4>
+                                <span class="timeline-year">2020 - 2022</span>
+                            </div>
+                        </div>
+                        <div class="timeline-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Algorithms and Data Structures</h3>
+                                <h4 class="timeline-subtitle">Software University "SoftUni"</h4>
+                                <span class="timeline-year">2021 - 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Bachelor - International Business Management</h3>
+                                <h4 class="timeline-subtitle">Varna Free University "Chernorizets Hrabar"</h4>
+                                <span class="timeline-year">2010 - 2015</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid-section">
+                <h2 class="main-section-title extramcert">Certificates</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">ASP.NET Core - February 2022</h3>
+                        <a href="https://softuni.bg/certificates/details/132634/77a7b7f8" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">ReactJS - June 2022</h3>
+                        <a href="https://softuni.bg/certificates/details/140700/4671f315" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">C# Web Developer</h3>
+                        <a href="#" target="_blank" class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Entity Framework Core - October 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/119061/85e1d32b" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Data Structures - February 2022</h3>
+                        <a href="https://softuni.bg/certificates/details/127946/b5606d27" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Algorithms - December 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/123100/1906bac1" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">C# Web Basics - January 2022</h3>
+                        <a href="https://softuni.bg/certificates/details/126351/a9e75884" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">MS SQL - September 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/113957/dab4abfe" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">HTML & CSS - May 2022</h3>
+                        <a href="https://softuni.bg/certificates/details/137019/b811cc6a" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">C# OOP - February 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/104264/eb8feb48" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">C# Advanced - January 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/104753/919cc9dd" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">JavaScript Advanced - May 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/110422/72945619" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">JavaScript Applications - June 2021</h3>
+                        <a href="https://softuni.bg/certificates/details/110269/4c12e9c4" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Programming Fundamentals - September 2020</h3>
+                        <a href="https://softuni.bg/certificates/details/96325/950833d4" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Programming Basics - July 2020</h3>
+                        <a href="https://softuni.bg/certificates/details/88165/e6b3380f" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Digital Marketing Basics</h3>
+                        <a href="https://digital.softuni.bg/certificates/details/22717/070fd7f8" target="_blank"
+                            class="certificate-link">
+                            <i class="fas fa-certificate"></i> View
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const downloadBtn = document.getElementById('downloadBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            downloadBtn.addEventListener('click', function () {
+                loadingOverlay.classList.add('active');
+
+                const element = document.getElementById('cv-content');
+                const clonedElement = element.cloneNode(true);
+
+                const downloadBtnClone = clonedElement.querySelector('#downloadBtn');
+                if (downloadBtnClone) downloadBtnClone.remove();
+
+                const experienceSection = clonedElement.querySelector('.experience-section');
+                if (experienceSection) {
+                    experienceSection.style.pageBreakAfter = 'always';
+                }
+
+                // const projectsSection = clonedElement.querySelector('.grid-section:not(:has(.main-section-title.extramcert))');
+                // if (projectsSection) {
+                //     projectsSection.style.marginBottom = '0.5rem';
+
+                //     const projectCards = projectsSection.querySelectorAll('.project-card');
+                //     projectCards.forEach(card => {
+                //         card.style.padding = '0.05rem';
+                //     });
+                // }
+                const projectsSection = clonedElement.querySelector('.grid-section:not(:has(.main-section-title.extramcert))');
+                if (projectsSection) {
+                    projectsSection.style.marginBottom = '0.5rem';
+
+                    const projectsGrid = projectsSection.querySelector('.projects-grid');
+                    if (projectsGrid) {
+                        projectsGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                        projectsGrid.style.gap = '0.8rem';
+                    }
+
+                    const projectCards = projectsSection.querySelectorAll('.project-card');
+                    projectCards.forEach(card => {
+                        card.style.padding = '0.05rem';
+                    });
+                }
+
+                const skillsSection = clonedElement.querySelector('.sidebar-section:has(.section-title.extrams)');
+                if (skillsSection) {
+                    skillsSection.style.marginTop = '5rem';
+                }
+
+                const languagesSection = clonedElement.querySelector('.sidebar-section:has(.section-title.extramlang)');
+                if (languagesSection) {
+                    languagesSection.style.marginTop = '3rem';
+                }
+
+                const interestsSection = clonedElement.querySelector('.sidebar-section:has(.section-title.extramint)');
+                if (interestsSection) {
+                    interestsSection.style.marginTop = '3rem';
+                }
+
+                const educationSection = clonedElement.querySelector('.timeline-section:not(.experience-section)');
+                if (educationSection) {
+                    educationSection.style.marginTop = '4rem';
+                    educationSection.style.marginBottom = '0.5rem';
+
+                    const timelineContents = educationSection.querySelectorAll('.timeline-content');
+                    timelineContents.forEach(content => {
+                        content.style.padding = '0.5rem';
+                    });
+                }
+
+                const certificatesSection = clonedElement.querySelector('.grid-section:has(.main-section-title.extramcert)');
+                if (certificatesSection) {
+                    certificatesSection.style.marginTop = '2rem';
+                    certificatesSection.style.paddingBottom = '0.3rem';
+
+                    const certificateItems = certificatesSection.querySelectorAll('.certificate-item');
+                    certificateItems.forEach(item => {
+                        const title = item.querySelector('.certificate-title');
+                        if (title) title.style.fontSize = '0.65rem';
+                    });
+                }
+
+                html2pdf()
+                    .from(clonedElement)
+                    .set({
+                        margin: [-2, -2.5, 0, 0],
+                        filename: 'Kristiyan_Enchev_CV.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: {
+                            scale: 2,
+                            useCORS: true,
+                            letterRendering: true,
+                            logging: false
+                        },
+                        jsPDF: {
+                            unit: 'mm',
+                            format: 'a4',
+                            orientation: 'portrait',
+                            compress: true
+                        },
+                        pagebreak: { mode: 'avoid-all' }
+                    })
+                    .save()
+                    .then(() => {
+                        setTimeout(() => {
+                            loadingOverlay.classList.remove('active');
+                        }, 500);
+                    })
+                    .catch(error => {
+                        console.error('PDF generation error:', error);
+                        loadingOverlay.classList.remove('active');
+                        alert('There was an error generating the PDF. Please try again.');
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
