@@ -1,0 +1,229 @@
+{
+  "personal": {
+    "name": "KRISTIYAN ENCHEV",
+    "title": "Senior Full Stack Developer",
+    "email": "kristiqnenchevv@gmail.com",
+    "phone": "+359 89 385 6074",
+    "profileImage": "/img/my.png",
+    "domain": "https://kristiyan-enchev-cv.web.app"
+  },
+  "social": {
+    "github": "https://github.com/KristiyanEnchev"
+  },
+  "profile": {
+    "description": "Experienced full-stack developer specializing in building enterprise-grade applications with .NET and modern JavaScript frameworks. I architect clean, maintainable solutions following domain-driven design principles, with expertise in:",
+    "keyCompetencies": [
+      "RESTful API design & microservices architecture",
+      "Clean Architecture & Domain-Driven Design",
+      "Full stack web application development",
+      "System integration & performance optimization"
+    ]
+  },
+  "devopsCloud": {
+    "description": "Proficient in containerization and deployment automation with basic knowledge in:",
+    "technologies": [
+      { "name": "Docker", "icon": "fab fa-docker" },
+      { "name": "Docker Compose", "icon": "fas fa-cubes" },
+      { "name": "CI/CD", "icon": "fas fa-code-branch" },
+      { "name": "Kubernetes", "icon": "fas fa-dharmachakra" }
+    ],
+    "growthArea": "Actively expanding knowledge in cloud-native applications and infrastructure as code"
+  },
+  "skills": [
+    "C#", "ASP.NET Core", "EF Core", "MS SQL", "React", "TypeScript", 
+    "Angular", "JavaScript", "HTML/CSS", "TailwindCSS", "Node.js", 
+    "Express", "MongoDB", "Redis", "Docker", "CQRS", "Microservices"
+  ],
+  "languages": [
+    { "name": "Bulgarian", "level": 100 },
+    { "name": "English", "level": 90 },
+    { "name": "French", "level": 40 }
+  ],
+  "interests": [
+    { "name": "AI", "icon": "fas fa-solid fa-robot" },
+    { "name": "Technology", "icon": "fas fa-microchip" },
+    { "name": "Digital Marketing", "icon": "fas fa-chart-line" },
+    { "name": "Green Energy", "icon": "fas fa-leaf" },
+    { "name": "Health & Fitness", "icon": "fas fa-heartbeat" }
+  ],
+  "experience": [
+    {
+      "position": "left",
+      "title": "Senior Developer",
+      "company": "2024 - Present, Accedia AD",
+      "description": "Designed scalable microservices architecture. Led code reviews, sprint planning, and team mentoring.\n\n**Additional Role (2025 - Present):** SME and Technical Lead consultant for the Identity and Access Management platform of AlexanderForbes."
+    },
+    {
+      "position": "right",
+      "title": "Mid Developer",
+      "company": "2023 - 2024, Accedia AD",
+      "description": "Supporting AlexanderForbes \"Common Services\" microservices. Implemented RESTful APIs using ASP.NET Core."
+    },
+    {
+      "position": "left",
+      "title": "Junior Developer",
+      "company": "2022 - 2023, Accedia AD",
+      "description": "Contributed to backend development using C# and ASP.NET Core, working with SQL Server and Entity Framework Core."
+    },
+    {
+      "position": "right",
+      "title": "IT Support",
+      "company": "2020 - 2022, Kristelin OOD",
+      "description": "Provided IT support and system maintenance for company systems."
+    },
+    {
+      "position": "left",
+      "title": "Carnival Cruise Lines",
+      "company": "2014 - 2020, Miami, Florida, USA",
+      "description": "Sr. Bartender | Asst. Specialty Restaurant Manager | SteakHouse Server"
+    }
+  ],
+  "projects": [
+    {
+      "title": "MessagingMicroservices",
+      "subtitle": ".NET 8 + React 18",
+      "technologies": ["Microservices", "Clean Architecture"],
+      "github": "https://github.com/KristiyanEnchev/MessagingMicroservices"
+    },
+    {
+      "title": "StockDock",
+      "subtitle": ".NET 9 + React 18",
+      "technologies": ["DDD", "SignalR"],
+      "github": "https://github.com/KristiyanEnchev/StockDock"
+    },
+    {
+      "title": "BlogStop",
+      "subtitle": ".NET 6 + React 18",
+      "technologies": ["Clean Architecture", "Domain Events"],
+      "github": "https://github.com/KristiyanEnchev/BlogStop"
+    },
+    {
+      "title": "SHOP4E",
+      "subtitle": "Node.js + React 18",
+      "technologies": ["Express", "MongoDB"],
+      "github": "https://github.com/KristiyanEnchev/SHOP4E"
+    },
+    {
+      "title": "MovieNet",
+      "subtitle": ".NET 6 + React 18",
+      "technologies": ["Clean Architecture", "Redis"],
+      "github": "https://github.com/KristiyanEnchev/MovieNet"
+    },
+    {
+      "title": "Bug Jar",
+      "subtitle": "ASP.NET Core",
+      "technologies": ["MVC", "EF Core"],
+      "github": "https://github.com/KristiyanEnchev/IssueSystem"
+    },
+    {
+      "title": "BookClub",
+      "subtitle": ".NET 8 + React 18",
+      "technologies": ["TypeScript", "CQRS"],
+      "github": "https://github.com/KristiyanEnchev/BookClub"
+    },
+    {
+      "title": "TodoSwitch",
+      "subtitle": ".NET 7 + React 18",
+      "technologies": ["DDD", "MongoDB"],
+      "github": "https://github.com/KristiyanEnchev/TodoSwitch"
+    }
+  ],
+  "education": [
+    {
+      "position": "left",
+      "title": "C# Web Development",
+      "institution": "Software University \"SoftUni\"",
+      "year": "2019 - 2022"
+    },
+    {
+      "position": "right",
+      "title": "JS Web Development (React)",
+      "institution": "Software University \"SoftUni\"",
+      "year": "2020 - 2022"
+    },
+    {
+      "position": "left",
+      "title": "HTML and CSS",
+      "institution": "Software University \"SoftUni\"",
+      "year": "2020 - 2022"
+    },
+    {
+      "position": "right",
+      "title": "Algorithms and Data Structures",
+      "institution": "Software University \"SoftUni\"",
+      "year": "2021 - 2022"
+    },
+    {
+      "position": "left",
+      "title": "Bachelor - International Business Management",
+      "institution": "Varna Free University \"Chernorizets Hrabar\"",
+      "year": "2010 - 2015"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "ASP.NET Core - February 2022",
+      "url": "https://softuni.bg/certificates/details/132634/77a7b7f8"
+    },
+    {
+      "title": "ReactJS - June 2022",
+      "url": "https://softuni.bg/certificates/details/140700/4671f315"
+    },
+    {
+      "title": "C# Web Developer",
+      "url": "#"
+    },
+    {
+      "title": "Entity Framework Core - October 2021",
+      "url": "https://softuni.bg/certificates/details/119061/85e1d32b"
+    },
+    {
+      "title": "Data Structures - February 2022",
+      "url": "https://softuni.bg/certificates/details/127946/b5606d27"
+    },
+    {
+      "title": "Algorithms - December 2021",
+      "url": "https://softuni.bg/certificates/details/123100/1906bac1"
+    },
+    {
+      "title": "C# Web Basics - January 2022",
+      "url": "https://softuni.bg/certificates/details/126351/a9e75884"
+    },
+    {
+      "title": "MS SQL - September 2021",
+      "url": "https://softuni.bg/certificates/details/113957/dab4abfe"
+    },
+    {
+      "title": "HTML & CSS - May 2022",
+      "url": "https://softuni.bg/certificates/details/137019/b811cc6a"
+    },
+    {
+      "title": "C# OOP - February 2021",
+      "url": "https://softuni.bg/certificates/details/104264/eb8feb48"
+    },
+    {
+      "title": "C# Advanced - January 2021",
+      "url": "https://softuni.bg/certificates/details/104753/919cc9dd"
+    },
+    {
+      "title": "JavaScript Advanced - May 2021",
+      "url": "https://softuni.bg/certificates/details/110422/72945619"
+    },
+    {
+      "title": "JavaScript Applications - June 2021",
+      "url": "https://softuni.bg/certificates/details/110269/4c12e9c4"
+    },
+    {
+      "title": "Programming Fundamentals - September 2020",
+      "url": "https://softuni.bg/certificates/details/96325/950833d4"
+    },
+    {
+      "title": "Programming Basics - July 2020",
+      "url": "https://softuni.bg/certificates/details/88165/e6b3380f"
+    },
+    {
+      "title": "Digital Marketing Basics",
+      "url": "https://digital.softuni.bg/certificates/details/22717/070fd7f8"
+    }
+  ]
+}
