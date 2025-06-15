@@ -22,29 +22,79 @@
   "devopsCloud": {
     "description": "Proficient in containerization and deployment automation with basic knowledge in:",
     "technologies": [
-      { "name": "Docker", "icon": "fab fa-docker" },
-      { "name": "Docker Compose", "icon": "fas fa-cubes" },
-      { "name": "CI/CD", "icon": "fas fa-code-branch" },
-      { "name": "Kubernetes", "icon": "fas fa-dharmachakra" }
+      {
+        "name": "Docker",
+        "icon": "fab fa-docker"
+      },
+      {
+        "name": "Docker Compose",
+        "icon": "fas fa-cubes"
+      },
+      {
+        "name": "CI/CD",
+        "icon": "fas fa-code-branch"
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "fas fa-dharmachakra"
+      }
     ],
     "growthArea": "Actively expanding knowledge in cloud-native applications and infrastructure as code"
   },
   "skills": [
-    "C#", "ASP.NET Core", "EF Core", "MS SQL", "React", "TypeScript", 
-    "Angular", "JavaScript", "HTML/CSS", "TailwindCSS", "Node.js", 
-    "Express", "MongoDB", "Redis", "Docker", "CQRS", "Microservices"
+    "C#",
+    "ASP.NET Core",
+    "EF Core",
+    "MS SQL",
+    "React",
+    "TypeScript",
+    "Angular",
+    "JavaScript",
+    "HTML/CSS",
+    "TailwindCSS",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Redis",
+    "Docker",
+    "CQRS",
+    "Microservices"
   ],
   "languages": [
-    { "name": "Bulgarian", "level": 100 },
-    { "name": "English", "level": 90 },
-    { "name": "French", "level": 40 }
+    {
+      "name": "Bulgarian",
+      "level": 100
+    },
+    {
+      "name": "English",
+      "level": 90
+    },
+    {
+      "name": "French",
+      "level": 40
+    }
   ],
   "interests": [
-    { "name": "AI", "icon": "fas fa-solid fa-robot" },
-    { "name": "Technology", "icon": "fas fa-microchip" },
-    { "name": "Digital Marketing", "icon": "fas fa-chart-line" },
-    { "name": "Green Energy", "icon": "fas fa-leaf" },
-    { "name": "Health & Fitness", "icon": "fas fa-heartbeat" }
+    {
+      "name": "AI",
+      "icon": "fas fa-solid fa-robot"
+    },
+    {
+      "name": "Technology",
+      "icon": "fas fa-microchip"
+    },
+    {
+      "name": "Digital Marketing",
+      "icon": "fas fa-chart-line"
+    },
+    {
+      "name": "Green Energy",
+      "icon": "fas fa-leaf"
+    },
+    {
+      "name": "Health & Fitness",
+      "icon": "fas fa-heartbeat"
+    }
   ],
   "experience": [
     {
@@ -68,7 +118,7 @@
     {
       "position": "right",
       "title": "IT Support",
-      "company": "2020 - 2022, Kristelin OOD",
+      "company": "2020 - 2022, Enchevi8891 OOD",
       "description": "Provided IT support and system maintenance for company systems."
     },
     {
@@ -82,49 +132,73 @@
     {
       "title": "MessagingMicroservices",
       "subtitle": ".NET 8 + React 18",
-      "technologies": ["Microservices", "Clean Architecture"],
+      "technologies": [
+        "Microservices",
+        "Clean Architecture"
+      ],
       "github": "https://github.com/KristiyanEnchev/MessagingMicroservices"
     },
     {
       "title": "StockDock",
       "subtitle": ".NET 9 + React 18",
-      "technologies": ["DDD", "SignalR"],
+      "technologies": [
+        "DDD",
+        "SignalR"
+      ],
       "github": "https://github.com/KristiyanEnchev/StockDock"
     },
     {
       "title": "BlogStop",
       "subtitle": ".NET 6 + React 18",
-      "technologies": ["Clean Architecture", "Domain Events"],
+      "technologies": [
+        "Clean Architecture",
+        "Domain Events"
+      ],
       "github": "https://github.com/KristiyanEnchev/BlogStop"
     },
     {
       "title": "SHOP4E",
       "subtitle": "Node.js + React 18",
-      "technologies": ["Express", "MongoDB"],
+      "technologies": [
+        "Express",
+        "MongoDB"
+      ],
       "github": "https://github.com/KristiyanEnchev/SHOP4E"
     },
     {
       "title": "MovieNet",
       "subtitle": ".NET 6 + React 18",
-      "technologies": ["Clean Architecture", "Redis"],
+      "technologies": [
+        "Clean Architecture",
+        "Redis"
+      ],
       "github": "https://github.com/KristiyanEnchev/MovieNet"
     },
     {
       "title": "Bug Jar",
       "subtitle": "ASP.NET Core",
-      "technologies": ["MVC", "EF Core"],
+      "technologies": [
+        "MVC",
+        "EF Core"
+      ],
       "github": "https://github.com/KristiyanEnchev/IssueSystem"
     },
     {
       "title": "BookClub",
       "subtitle": ".NET 8 + React 18",
-      "technologies": ["TypeScript", "CQRS"],
+      "technologies": [
+        "TypeScript",
+        "CQRS"
+      ],
       "github": "https://github.com/KristiyanEnchev/BookClub"
     },
     {
       "title": "TodoSwitch",
       "subtitle": ".NET 7 + React 18",
-      "technologies": ["DDD", "MongoDB"],
+      "technologies": [
+        "DDD",
+        "MongoDB"
+      ],
       "github": "https://github.com/KristiyanEnchev/TodoSwitch"
     }
   ],
